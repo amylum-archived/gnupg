@@ -30,7 +30,7 @@ LIBGCRYPT_TAR = /tmp/libgcrypt.tar.gz
 LIBGCRYPT_DIR = /tmp/libgcrypt
 LIBGCRYPT_PATH = -I$(LIBGCRYPT_DIR)/usr/include -L$(LIBGCRYPT_DIR)/usr/lib
 
-LIBKSBA_VERSION = 1.6.4-1
+LIBKSBA_VERSION = 1.3.3-1
 LIBKSBA_URL = https://github.com/amylum/libksba/releases/download/$(LIBKSBA_VERSION)/libksba.tar.gz
 LIBKSBA_TAR = /tmp/libksba.tar.gz
 LIBKSBA_DIR = /tmp/libksba
