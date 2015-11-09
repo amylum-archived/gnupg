@@ -36,6 +36,12 @@ LIBKSBA_TAR = /tmp/libksba.tar.gz
 LIBKSBA_DIR = /tmp/libksba
 LIBKSBA_PATH = -I$(LIBKSBA_DIR)/usr/include -L$(LIBKSBA_DIR)/usr/lib
 
+NPTH_VERSION = 1.2-1
+NPTH_URL = https://github.com/amylum/npth/releases/download/$(NPTH_VERSION)/npth.tar.gz
+NPTH_TAR = /tmp/npth.tar.gz
+NPTH_DIR = /tmp/npth
+NPTH_PATH = -I$(NPTH_DIR)/usr/include -L$(NPTH_DIR)/usr/lib
+
 .PHONY : default submodule deps manual container deps build version push local
 
 default: submodule container
@@ -66,12 +72,16 @@ deps:
 	mkdir $(LIBKSBA_DIR)
 	curl -sLo $(LIBKSBA_TAR) $(LIBKSBA_URL)
 	tar -x -C $(LIBKSBA_DIR) -f $(LIBKSBA_TAR)
+	rm -rf $(NPTH_DIR) $(NPTH_TAR)
+	mkdir $(NPTH_DIR)
+	curl -sLo $(NPTH_TAR) $(NPTH_URL)
+	tar -x -C $(NPTH_DIR) -f $(NPTH_TAR)
 
 build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	cd $(BUILD_DIR) && ./autogen.sh
-	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
