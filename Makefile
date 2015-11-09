@@ -20,9 +20,15 @@ LIBGPG-ERROR_PATH = -I$(LIBGPG-ERROR_DIR)/usr/include -L$(LIBGPG-ERROR_DIR)/usr/
 
 LIBASSUAN_VERSION = 2.4.0-1
 LIBASSUAN_URL = https://github.com/amylum/libassuan/releases/download/$(LIBASSUAN_VERSION)/libassuan.tar.gz
-LIBASSUAN_TAR = /tmp/libgpgerror.tar.gz
+LIBASSUAN_TAR = /tmp/libassuan.tar.gz
 LIBASSUAN_DIR = /tmp/libassuan
 LIBASSUAN_PATH = -I$(LIBASSUAN_DIR)/usr/include -L$(LIBASSUAN_DIR)/usr/lib
+
+LIBGCRYPT_VERSION = 1.6.4-1
+LIBGCRYPT_URL = https://github.com/amylum/libgcrypt/releases/download/$(LIBGCRYPT_VERSION)/libgcrypt.tar.gz
+LIBGCRYPT_TAR = /tmp/libgcrypt.tar.gz
+LIBGCRYPT_DIR = /tmp/libgcrypt
+LIBGCRYPT_PATH = -I$(LIBGCRYPT_DIR)/usr/include -L$(LIBGCRYPT_DIR)/usr/lib
 
 .PHONY : default submodule deps manual container deps build version push local
 
@@ -46,13 +52,16 @@ deps:
 	mkdir $(LIBASSUAN_DIR)
 	curl -sLo $(LIBASSUAN_TAR) $(LIBASSUAN_URL)
 	tar -x -C $(LIBASSUAN_DIR) -f $(LIBASSUAN_TAR)
-	find /tmp -name '*.la' -delete
+	rm -rf $(LIBGCRYPT_DIR) $(LIBGCRYPT_TAR)
+	mkdir $(LIBGCRYPT_DIR)
+	curl -sLo $(LIBGCRYPT_TAR) $(LIBGCRYPT_URL)
+	tar -x -C $(LIBGCRYPT_DIR) -f $(LIBGCRYPT_TAR)
 
 build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	cd $(BUILD_DIR) && ./autogen.sh
-	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
