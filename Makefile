@@ -42,6 +42,12 @@ NPTH_TAR = /tmp/npth.tar.gz
 NPTH_DIR = /tmp/npth
 NPTH_PATH = -I$(NPTH_DIR)/usr/include -L$(NPTH_DIR)/usr/lib
 
+GNUTLS_VERSION = 3.4.7-1
+GNUTLS_URL = https://github.com/amylum/gnutls/releases/download/$(GNUTLS_VERSION)/gnutls.tar.gz
+GNUTLS_TAR = /tmp/gnutls.tar.gz
+GNUTLS_DIR = /tmp/gnutls
+GNUTLS_PATH = -I$(GNUTLS_DIR)/usr/include -L$(GNUTLS_DIR)/usr/lib
+
 .PHONY : default submodule deps manual container deps build version push local
 
 default: submodule container
@@ -76,12 +82,16 @@ deps:
 	mkdir $(NPTH_DIR)
 	curl -sLo $(NPTH_TAR) $(NPTH_URL)
 	tar -x -C $(NPTH_DIR) -f $(NPTH_TAR)
+	rm -rf $(GNUTLS_DIR) $(GNUTLS_TAR)
+	mkdir $(GNUTLS_DIR)
+	curl -sLo $(GNUTLS_TAR) $(GNUTLS_URL)
+	tar -x -C $(GNUTLS_DIR) -f $(GNUTLS_TAR)
 
 build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	cd $(BUILD_DIR) && ./autogen.sh
-	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
