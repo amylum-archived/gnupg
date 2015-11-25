@@ -72,6 +72,12 @@ P11-KIT_TAR = /tmp/p11-kit.tar.gz
 P11-KIT_DIR = /tmp/p11-kit
 P11-KIT_PATH = -I$(P11-KIT_DIR)/usr/include -L$(P11-KIT_DIR)/usr/lib
 
+ZLIB_VERSION = 1.2.8-1
+ZLIB_URL = https://github.com/amylum/zlib/releases/download/$(ZLIB_VERSION)/zlib.tar.gz
+ZLIB_TAR = /tmp/zlib.tar.gz
+ZLIB_DIR = /tmp/zlib
+ZLIB_PATH = -I$(ZLIB_DIR)/usr/include -L$(ZLIB_DIR)/usr/lib
+
 .PHONY : default submodule deps manual container deps build version push local
 
 default: submodule container
@@ -126,12 +132,16 @@ deps:
 	mkdir $(P11-KIT_DIR)
 	curl -sLo $(P11-KIT_TAR) $(P11-KIT_URL)
 	tar -x -C $(P11-KIT_DIR) -f $(P11-KIT_TAR)
+	rm -rf $(ZLIB_DIR) $(ZLIB_TAR)
+	mkdir $(ZLIB_DIR)
+	curl -sLo $(ZLIB_TAR) $(ZLIB_URL)
+	tar -x -C $(ZLIB_DIR) -f $(ZLIB_TAR)
 
 build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	cd $(BUILD_DIR) && ./autogen.sh
-	cd $(BUILD_DIR) && CC=musl-gcc LIBS='-lgmp -ltasn1 -lhogweed -lnettle -lp11-kit' CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH) $(GMP_PATH) $(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC=musl-gcc LIBS='-lgmp -ltasn1 -lhogweed -lnettle -lp11-kit -lz' CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH) $(GMP_PATH) $(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH) $(ZLIB_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
