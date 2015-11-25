@@ -149,7 +149,7 @@ build: submodule deps
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
-	cp $(BUILD_DIR)/COPYING.LESSER $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)/LICENSE
+	cp $(BUILD_DIR)/COPYING.LIB $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)/LICENSE
 	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
 
 version:
