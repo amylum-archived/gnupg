@@ -78,17 +78,20 @@ ZLIB_TAR = /tmp/zlib.tar.gz
 ZLIB_DIR = /tmp/zlib
 ZLIB_PATH = -I$(ZLIB_DIR)/usr/include -L$(ZLIB_DIR)/usr/lib
 
-.PHONY : default submodule deps manual container deps build version push local
+.PHONY : default submodule build_container deps manual container deps build version push local
 
 default: submodule container
 
 submodule:
 	git submodule update --init
 
-manual: submodule
+manual: submodule build_container
 	./meta/launch /bin/bash || true
 
-container:
+build_container:
+	docker build -t gnupg-pkg meta
+
+container: build_container
 	./meta/launch
 
 deps:
