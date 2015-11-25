@@ -52,25 +52,25 @@ GMP_VERSION = 6.1.0-1
 GMP_URL = https://github.com/amylum/gmp/releases/download/$(GMP_VERSION)/gmp.tar.gz
 GMP_TAR = /tmp/gmp.tar.gz
 GMP_DIR = /tmp/gmp
-GMP_PATH = -I$(GMP_DIR)/usr/include -L$(GMP_DIR)/usr/lib -lgmp
+GMP_PATH = -I$(GMP_DIR)/usr/include -L$(GMP_DIR)/usr/lib
 
 NETTLE_VERSION = 3.1.1-2
 NETTLE_URL = https://github.com/amylum/nettle/releases/download/$(NETTLE_VERSION)/nettle.tar.gz
 NETTLE_TAR = /tmp/nettle.tar.gz
 NETTLE_DIR = /tmp/nettle
-NETTLE_PATH = -I$(NETTLE_DIR)/usr/include -L$(NETTLE_DIR)/usr/lib -lhogweed
+NETTLE_PATH = -I$(NETTLE_DIR)/usr/include -L$(NETTLE_DIR)/usr/lib
 
 LIBTASN1_VERSION = 4.7-2
 LIBTASN1_URL = https://github.com/amylum/libtasn1/releases/download/$(LIBTASN1_VERSION)/libtasn1.tar.gz
 LIBTASN1_TAR = /tmp/libtasn1.tar.gz
 LIBTASN1_DIR = /tmp/libtasn1
-LIBTASN1_PATH = -I$(LIBTASN1_DIR)/usr/include -L$(LIBTASN1_DIR)/usr/lib -ltasn1
+LIBTASN1_PATH = -I$(LIBTASN1_DIR)/usr/include -L$(LIBTASN1_DIR)/usr/lib
 
 P11-KIT_VERSION = 0.23.1-1
 P11-KIT_URL = https://github.com/amylum/p11-kit/releases/download/$(P11-KIT_VERSION)/p11-kit.tar.gz
 P11-KIT_TAR = /tmp/p11-kit.tar.gz
 P11-KIT_DIR = /tmp/p11-kit
-P11-KIT_PATH = -I$(P11-KIT_DIR)/usr/include -L$(P11-KIT_DIR)/usr/lib -lp11-kit
+P11-KIT_PATH = -I$(P11-KIT_DIR)/usr/include -L$(P11-KIT_DIR)/usr/lib
 
 .PHONY : default submodule deps manual container deps build version push local
 
@@ -131,7 +131,7 @@ build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	cd $(BUILD_DIR) && ./autogen.sh
-	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH) $(GMP_PATH) $(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC=musl-gcc LIBS='-lgmp -ltasn1 -lhogweed -lp11-kit' CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH) $(GMP_PATH) $(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	rm -rf $(RELEASE_DIR)/tmp
 	mkdir -p $(RELEASE_DIR)/usr/share/licenses/$(PACKAGE)
