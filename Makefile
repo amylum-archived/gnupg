@@ -78,6 +78,12 @@ ZLIB_TAR = /tmp/zlib.tar.gz
 ZLIB_DIR = /tmp/zlib
 ZLIB_PATH = -I$(ZLIB_DIR)/usr/include -L$(ZLIB_DIR)/usr/lib
 
+SQLITE_VERSION = 3.9.2-1
+SQLITE_URL = https://github.com/amylum/sqlite/releases/download/$(SQLITE_VERSION)/sqlite.tar.gz
+SQLITE_TAR = /tmp/sqlite.tar.gz
+SQLITE_DIR = /tmp/sqlite
+SQLITE_PATH = -I$(SQLITE_DIR)/usr/include -L$(SQLITE_DIR)/usr/lib
+
 .PHONY : default submodule build_container deps manual container deps build version push local
 
 default: submodule container
@@ -139,13 +145,17 @@ deps:
 	mkdir $(ZLIB_DIR)
 	curl -sLo $(ZLIB_TAR) $(ZLIB_URL)
 	tar -x -C $(ZLIB_DIR) -f $(ZLIB_TAR)
+	rm -rf $(SQLITE_DIR) $(SQLITE_TAR)
+	mkdir $(SQLITE_DIR)
+	curl -sLo $(SQLITE_TAR) $(SQLITE_URL)
+	tar -x -C $(SQLITE_DIR) -f $(SQLITE_TAR)
 
 build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
 	patch -d $(BUILD_DIR) -p0 < patches/remove-strconcat.patch
 	cd $(BUILD_DIR) && ./autogen.sh
-	cd $(BUILD_DIR) && CC=musl-gcc LIBS='-ltasn1 -lhogweed -lnettle -lp11-kit -lz -lgmp' CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH) $(GMP_PATH) $(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH) $(ZLIB_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC=musl-gcc LIBS='-ltasn1 -lhogweed -lnettle -lp11-kit -lz -lgmp' CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH) $(GMP_PATH) $(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH) $(ZLIB_PATH) $(SQLITE_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	ln -s gpg2 $(RELEASE_DIR)/usr/bin/gpg
 	rm -rf $(RELEASE_DIR)/tmp
