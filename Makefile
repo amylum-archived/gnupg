@@ -24,7 +24,7 @@ LIBASSUAN_TAR = /tmp/libassuan.tar.gz
 LIBASSUAN_DIR = /tmp/libassuan
 LIBASSUAN_PATH = -I$(LIBASSUAN_DIR)/usr/include -L$(LIBASSUAN_DIR)/usr/lib
 
-LIBGCRYPT_VERSION = 1.6.4-1
+LIBGCRYPT_VERSION = 1.6.4-2
 LIBGCRYPT_URL = https://github.com/amylum/libgcrypt/releases/download/$(LIBGCRYPT_VERSION)/libgcrypt.tar.gz
 LIBGCRYPT_TAR = /tmp/libgcrypt.tar.gz
 LIBGCRYPT_DIR = /tmp/libgcrypt
