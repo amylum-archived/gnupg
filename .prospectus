@@ -11,7 +11,7 @@ item do
   end
 
   deps do
-    %w(libgpg-error libassuan libgcrypt libksba npth gnutls gmp nettle libtasn1 p11-kit zlib).each do |dep|
+    %w(libgpg-error libassuan libgcrypt libksba npth gnutls gmp nettle libtasn1 p11-kit zlib sqlite).each do |dep|
       item do
         name dep
 
