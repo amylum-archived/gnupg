@@ -153,6 +153,8 @@ deps:
 build: submodule deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
+	rm -rf $(BUILD_DIR)/.git
+	cp -R .git/modules/upstream $(BUILD_DIR)/.git
 	patch -d $(BUILD_DIR) -p0 < patches/remove-strconcat.patch
 	patch -d $(BUILD_DIR) -p1 < patches/cflags.patch
 	sed -i 's/beta=yes/beta=no/' $(BUILD_DIR)/autogen.sh
