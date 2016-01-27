@@ -156,7 +156,7 @@ build: submodule deps
 	patch -d $(BUILD_DIR) -p0 < patches/remove-strconcat.patch
 	sed -i 's/beta=yes/beta=no/' $(BUILD_DIR)/autogen.sh
 	cd $(BUILD_DIR) && ./autogen.sh
-	cd $(BUILD_DIR) && CC=musl-gcc CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH) $(GMP_PATH) $(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH) $(ZLIB_PATH) $(SQLITE_PATH)' LDFLAGS='$(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH) $(ZLIB_PATH) $(GMP_PATH) -ltasn1 -lhogweed -lnettle -lp11-kit -lz -lgmp' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
+	cd $(BUILD_DIR) && CC=musl-gcc LIBS='-ltasn1 -lhogweed -lnettle -lp11-kit -lz -lgmp' CFLAGS='$(CFLAGS) $(LIBGPG-ERROR_PATH) $(LIBASSUAN_PATH) $(LIBGCRYPT_PATH) $(LIBKSBA_PATH) $(NPTH_PATH) $(GNUTLS_PATH) $(GMP_PATH) $(NETTLE_PATH) $(LIBTASN1_PATH) $(P11-KIT_PATH) $(ZLIB_PATH) $(SQLITE_PATH)' ./configure $(PATH_FLAGS) $(CONF_FLAGS)
 	cd $(BUILD_DIR) && make DESTDIR=$(RELEASE_DIR) install
 	ln -s gpg2 $(RELEASE_DIR)/usr/bin/gpg
 	rm -rf $(RELEASE_DIR)/tmp
