@@ -42,7 +42,7 @@ NPTH_TAR = /tmp/npth.tar.gz
 NPTH_DIR = /tmp/npth
 NPTH_PATH = -I$(NPTH_DIR)/usr/include -L$(NPTH_DIR)/usr/lib
 
-GNUTLS_VERSION = 3.4.8-4
+GNUTLS_VERSION = 3.4.8-5
 GNUTLS_URL = https://github.com/amylum/gnutls/releases/download/$(GNUTLS_VERSION)/gnutls.tar.gz
 GNUTLS_TAR = /tmp/gnutls.tar.gz
 GNUTLS_DIR = /tmp/gnutls
