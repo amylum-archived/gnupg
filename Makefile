@@ -72,7 +72,7 @@ P11-KIT_TAR = /tmp/p11-kit.tar.gz
 P11-KIT_DIR = /tmp/p11-kit
 P11-KIT_PATH = -I$(P11-KIT_DIR)/usr/include -L$(P11-KIT_DIR)/usr/lib
 
-ZLIB_VERSION = 1.2.8-1
+ZLIB_VERSION = 1.2.8-2
 ZLIB_URL = https://github.com/amylum/zlib/releases/download/$(ZLIB_VERSION)/zlib.tar.gz
 ZLIB_TAR = /tmp/zlib.tar.gz
 ZLIB_DIR = /tmp/zlib
