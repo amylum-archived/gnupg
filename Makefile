@@ -6,37 +6,37 @@ RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PATH_FLAGS = --prefix=/usr --infodir=/tmp/trash --libexecdir=/usr/lib/gnupg --sbindir=/usr/bin
 CONF_FLAGS = --enable-maintainer-mode
-CFLAGS = -static -static-libgcc -Wl,-static -lc
+CFLAGS =
 
 PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/gnupg-//')
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
-LIBGPG-ERROR_VERSION = 1.21-3
+LIBGPG-ERROR_VERSION = 1.22-4
 LIBGPG-ERROR_URL = https://github.com/amylum/libgpg-error/releases/download/$(LIBGPG-ERROR_VERSION)/libgpg-error.tar.gz
 LIBGPG-ERROR_TAR = /tmp/libgpgerror.tar.gz
 LIBGPG-ERROR_DIR = /tmp/libgpg-error
 LIBGPG-ERROR_PATH = -I$(LIBGPG-ERROR_DIR)/usr/include -L$(LIBGPG-ERROR_DIR)/usr/lib
 
-LIBASSUAN_VERSION = 2.4.2-3
+LIBASSUAN_VERSION = 2.4.2-4
 LIBASSUAN_URL = https://github.com/amylum/libassuan/releases/download/$(LIBASSUAN_VERSION)/libassuan.tar.gz
 LIBASSUAN_TAR = /tmp/libassuan.tar.gz
 LIBASSUAN_DIR = /tmp/libassuan
 LIBASSUAN_PATH = -I$(LIBASSUAN_DIR)/usr/include -L$(LIBASSUAN_DIR)/usr/lib
 
-LIBGCRYPT_VERSION = 1.6.5-3
+LIBGCRYPT_VERSION = 1.6.5-4
 LIBGCRYPT_URL = https://github.com/amylum/libgcrypt/releases/download/$(LIBGCRYPT_VERSION)/libgcrypt.tar.gz
 LIBGCRYPT_TAR = /tmp/libgcrypt.tar.gz
 LIBGCRYPT_DIR = /tmp/libgcrypt
 LIBGCRYPT_PATH = -I$(LIBGCRYPT_DIR)/usr/include -L$(LIBGCRYPT_DIR)/usr/lib
 
-LIBKSBA_VERSION = 1.3.3-3
+LIBKSBA_VERSION = 1.3.4-4
 LIBKSBA_URL = https://github.com/amylum/libksba/releases/download/$(LIBKSBA_VERSION)/libksba.tar.gz
 LIBKSBA_TAR = /tmp/libksba.tar.gz
 LIBKSBA_DIR = /tmp/libksba
 LIBKSBA_PATH = -I$(LIBKSBA_DIR)/usr/include -L$(LIBKSBA_DIR)/usr/lib
 
-NPTH_VERSION = 1.2-1
+NPTH_VERSION = 1.2-2
 NPTH_URL = https://github.com/amylum/npth/releases/download/$(NPTH_VERSION)/npth.tar.gz
 NPTH_TAR = /tmp/npth.tar.gz
 NPTH_DIR = /tmp/npth
@@ -48,37 +48,37 @@ GNUTLS_TAR = /tmp/gnutls.tar.gz
 GNUTLS_DIR = /tmp/gnutls
 GNUTLS_PATH = -I$(GNUTLS_DIR)/usr/include -L$(GNUTLS_DIR)/usr/lib
 
-GMP_VERSION = 6.1.0-1
+GMP_VERSION = 6.1.0-3
 GMP_URL = https://github.com/amylum/gmp/releases/download/$(GMP_VERSION)/gmp.tar.gz
 GMP_TAR = /tmp/gmp.tar.gz
 GMP_DIR = /tmp/gmp
 GMP_PATH = -I$(GMP_DIR)/usr/include -L$(GMP_DIR)/usr/lib
 
-NETTLE_VERSION = 3.2-3
+NETTLE_VERSION = 3.2-4
 NETTLE_URL = https://github.com/amylum/nettle/releases/download/$(NETTLE_VERSION)/nettle.tar.gz
 NETTLE_TAR = /tmp/nettle.tar.gz
 NETTLE_DIR = /tmp/nettle
 NETTLE_PATH = -I$(NETTLE_DIR)/usr/include -L$(NETTLE_DIR)/usr/lib
 
-LIBTASN1_VERSION = 4.7-2
+LIBTASN1_VERSION = 4.8-4
 LIBTASN1_URL = https://github.com/amylum/libtasn1/releases/download/$(LIBTASN1_VERSION)/libtasn1.tar.gz
 LIBTASN1_TAR = /tmp/libtasn1.tar.gz
 LIBTASN1_DIR = /tmp/libtasn1
 LIBTASN1_PATH = -I$(LIBTASN1_DIR)/usr/include -L$(LIBTASN1_DIR)/usr/lib
 
-P11-KIT_VERSION = 0.23.1-3
+P11-KIT_VERSION = 0.23.1-4
 P11-KIT_URL = https://github.com/amylum/p11-kit/releases/download/$(P11-KIT_VERSION)/p11-kit.tar.gz
 P11-KIT_TAR = /tmp/p11-kit.tar.gz
 P11-KIT_DIR = /tmp/p11-kit
 P11-KIT_PATH = -I$(P11-KIT_DIR)/usr/include -L$(P11-KIT_DIR)/usr/lib
 
-ZLIB_VERSION = 1.2.8-2
+ZLIB_VERSION = 1.2.8-4
 ZLIB_URL = https://github.com/amylum/zlib/releases/download/$(ZLIB_VERSION)/zlib.tar.gz
 ZLIB_TAR = /tmp/zlib.tar.gz
 ZLIB_DIR = /tmp/zlib
 ZLIB_PATH = -I$(ZLIB_DIR)/usr/include -L$(ZLIB_DIR)/usr/lib
 
-SQLITE_VERSION = 3.12.1-9
+SQLITE_VERSION = 3.12.2-12
 SQLITE_URL = https://github.com/amylum/sqlite/releases/download/$(SQLITE_VERSION)/sqlite.tar.gz
 SQLITE_TAR = /tmp/sqlite.tar.gz
 SQLITE_DIR = /tmp/sqlite
