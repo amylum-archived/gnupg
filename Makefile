@@ -149,6 +149,7 @@ deps:
 	mkdir $(SQLITE_DIR)
 	curl -sLo $(SQLITE_TAR) $(SQLITE_URL)
 	tar -x -C $(SQLITE_DIR) -f $(SQLITE_TAR)
+	find /tmp -name '*.la' -delete
 
 build: submodule deps
 	rm -rf $(BUILD_DIR)
