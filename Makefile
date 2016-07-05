@@ -5,7 +5,7 @@ BUILD_DIR = /tmp/$(PACKAGE)-build
 RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PATH_FLAGS = --prefix=/usr --infodir=/tmp/trash --libexecdir=/usr/lib/gnupg --sbindir=/usr/bin
-CONF_FLAGS = --enable-maintainer-mode
+CONF_FLAGS = --enable-maintainer-mode --host=x86_64-unknown-linux-gnu
 CFLAGS =
 
 PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/gnupg-//')
@@ -156,7 +156,6 @@ build: submodule deps
 	rm -rf $(BUILD_DIR)/.git
 	cp -R .git/modules/upstream $(BUILD_DIR)/.git
 	sed -i '/worktree/d' $(BUILD_DIR)/.git/config
-	patch -d $(BUILD_DIR) -p0 < patches/remove-strconcat.patch
 	patch -d $(BUILD_DIR) -p1 < patches/cflags.patch
 	sed -i 's/beta=yes/beta=no/' $(BUILD_DIR)/autogen.sh
 	cd $(BUILD_DIR) && ./autogen.sh
