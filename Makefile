@@ -12,25 +12,25 @@ PACKAGE_VERSION = $$(git --git-dir=upstream/.git describe --tags | sed 's/gnupg-
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
-LIBGPG-ERROR_VERSION = 1.23-5
+LIBGPG-ERROR_VERSION = 1.24-6
 LIBGPG-ERROR_URL = https://github.com/amylum/libgpg-error/releases/download/$(LIBGPG-ERROR_VERSION)/libgpg-error.tar.gz
 LIBGPG-ERROR_TAR = /tmp/libgpgerror.tar.gz
 LIBGPG-ERROR_DIR = /tmp/libgpg-error
 LIBGPG-ERROR_PATH = -I$(LIBGPG-ERROR_DIR)/usr/include -L$(LIBGPG-ERROR_DIR)/usr/lib
 
-LIBASSUAN_VERSION = 2.4.2-5
+LIBASSUAN_VERSION = 2.4.3-7
 LIBASSUAN_URL = https://github.com/amylum/libassuan/releases/download/$(LIBASSUAN_VERSION)/libassuan.tar.gz
 LIBASSUAN_TAR = /tmp/libassuan.tar.gz
 LIBASSUAN_DIR = /tmp/libassuan
 LIBASSUAN_PATH = -I$(LIBASSUAN_DIR)/usr/include -L$(LIBASSUAN_DIR)/usr/lib
 
-LIBGCRYPT_VERSION = 1.6.5-5
+LIBGCRYPT_VERSION = 1.6.5-6
 LIBGCRYPT_URL = https://github.com/amylum/libgcrypt/releases/download/$(LIBGCRYPT_VERSION)/libgcrypt.tar.gz
 LIBGCRYPT_TAR = /tmp/libgcrypt.tar.gz
 LIBGCRYPT_DIR = /tmp/libgcrypt
 LIBGCRYPT_PATH = -I$(LIBGCRYPT_DIR)/usr/include -L$(LIBGCRYPT_DIR)/usr/lib
 
-LIBKSBA_VERSION = 1.3.4-5
+LIBKSBA_VERSION = 1.3.4-6
 LIBKSBA_URL = https://github.com/amylum/libksba/releases/download/$(LIBKSBA_VERSION)/libksba.tar.gz
 LIBKSBA_TAR = /tmp/libksba.tar.gz
 LIBKSBA_DIR = /tmp/libksba
