@@ -60,7 +60,7 @@ NETTLE_TAR = /tmp/nettle.tar.gz
 NETTLE_DIR = /tmp/nettle
 NETTLE_PATH = -I$(NETTLE_DIR)/usr/include -L$(NETTLE_DIR)/usr/lib
 
-LIBTASN1_VERSION = 4.8-4
+LIBTASN1_VERSION = 4.9-5
 LIBTASN1_URL = https://github.com/amylum/libtasn1/releases/download/$(LIBTASN1_VERSION)/libtasn1.tar.gz
 LIBTASN1_TAR = /tmp/libtasn1.tar.gz
 LIBTASN1_DIR = /tmp/libtasn1
