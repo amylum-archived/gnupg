@@ -66,7 +66,7 @@ LIBTASN1_TAR = /tmp/libtasn1.tar.gz
 LIBTASN1_DIR = /tmp/libtasn1
 LIBTASN1_PATH = -I$(LIBTASN1_DIR)/usr/include -L$(LIBTASN1_DIR)/usr/lib
 
-P11-KIT_VERSION = 0.23.1-4
+P11-KIT_VERSION = 0.23.1-5
 P11-KIT_URL = https://github.com/amylum/p11-kit/releases/download/$(P11-KIT_VERSION)/p11-kit.tar.gz
 P11-KIT_TAR = /tmp/p11-kit.tar.gz
 P11-KIT_DIR = /tmp/p11-kit
