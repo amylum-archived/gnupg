@@ -78,7 +78,7 @@ ZLIB_TAR = /tmp/zlib.tar.gz
 ZLIB_DIR = /tmp/zlib
 ZLIB_PATH = -I$(ZLIB_DIR)/usr/include -L$(ZLIB_DIR)/usr/lib
 
-SQLITE_VERSION = 3.13.0-13
+SQLITE_VERSION = 3.14.1-14
 SQLITE_URL = https://github.com/amylum/sqlite/releases/download/$(SQLITE_VERSION)/sqlite.tar.gz
 SQLITE_TAR = /tmp/sqlite.tar.gz
 SQLITE_DIR = /tmp/sqlite
