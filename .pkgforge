@@ -1,0 +1,50 @@
+name 'gnupg'
+org 'amylum'
+
+deps(
+  'libgpg-error': '1.24-6',
+  libassuan: '2.4.3-7',
+  libgcrypt: '1.7.3-11',
+  libksba: '1.3.4-6',
+  npth: '1.2-2',
+  gnutls: '3.4.10-8',
+  gmp: '6.1.1-4',
+  nettle: '3.2-4',
+  libtasn1: '4.9-5',
+  'p11-kit': '0.23.1-5',
+  zlib: '1.2.8-4',
+  sqlite: '3.14.1-14'
+)
+
+configure_flags(
+  prefix: '/usr',
+  sbindir: '/usr/bin',
+  libexecdir: '/usr/lib/gnupg',
+  'enable-maintainer-mode': nil,
+  host: 'x86_64-unknown-linux-gnu',
+)
+
+cflags
+libs '-ltasn1 -lhogweed -lnettle -lp11-kit -lz -lgmp'
+
+version do
+  git_tag /^gnupg-([\d.]+)$/
+end
+
+license 'COPYING.LIB'
+
+patch 'cflags.patch'
+
+build do
+  run 'sed -i "s/beta=yes/beta=no/" autogen.sh'
+  run 'autogen.sh'
+  run 'autoconf'
+  configure
+  make
+  install
+  run "ln -s gpg2 #{releasedir}/usr/bin/gpg"
+end
+
+test do
+  run 'gpg -V'
+end

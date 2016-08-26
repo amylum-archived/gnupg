@@ -11,19 +11,18 @@ item do
   end
 
   deps do
-    %w(libgpg-error libassuan libgcrypt libksba npth gnutls gmp nettle libtasn1 p11-kit zlib sqlite).each do |dep|
+    PkgForge.load_from_file.deps.each do |dep_name, current_version|
       item do
-        name dep
+        name dep_name
 
         expected do
           github_release
-          repo "amylum/#{dep}"
+          repo "amylum/#{dep_name}"
         end
 
         actual do
-          grep
-          file 'Makefile'
-          regex /^#{dep.upcase}_VERSION = ([\d.-]+)$/
+          static
+          set current_version
         end
       end
     end
