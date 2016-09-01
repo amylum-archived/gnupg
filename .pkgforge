@@ -27,10 +27,6 @@ configure_flags(
 cflags
 libs '-ltasn1 -lhogweed -lnettle -lp11-kit -lz -lgmp'
 
-version do
-  git_tag /^gnupg-([\d.]+)$/
-end
-
 license 'COPYING.LIB'
 
 patch 'cflags.patch'
