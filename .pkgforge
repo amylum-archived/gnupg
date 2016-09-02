@@ -42,5 +42,5 @@ build do
 end
 
 test do
-  run 'gpg -V'
+  run 'gpg --version'
 end
