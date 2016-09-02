@@ -25,7 +25,7 @@ configure_flags(
 )
 
 cflags
-libs '-ltasn1 -lhogweed -lnettle -lp11-kit -lz -lgmp'
+libs %w(tasn1 hogweed nettle p11-kit z gmp)
 
 license 'COPYING.LIB'
 
