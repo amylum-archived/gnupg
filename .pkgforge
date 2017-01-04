@@ -12,8 +12,8 @@ deps(
   nettle: '3.3-6',
   libtasn1: '4.9-5',
   'p11-kit': '0.23.2-6',
-  zlib: '1.2.9-1',
-  sqlite: '3.16.0-1'
+  zlib: '1.2.10-1',
+  sqlite: '3.16.1-1'
 )
 
 configure_flags(
