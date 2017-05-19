@@ -6,7 +6,7 @@ deps(
   libassuan: '2.4.3-12',
   libgcrypt: '1.7.6-2',
   libksba: '1.3.5-11',
-  npth: '1.3-1',
+  npth: '1.4-1',
   gnutls: '3.4.10-8',
   gmp: '6.1.2-1',
   nettle: '3.3-6',
