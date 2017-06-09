@@ -1,4 +1,3 @@
-Prospectus.extra_dep('file', 'pkgforge')
 Prospectus.extra_dep('file', 'prospectus_pkgforge')
 Prospectus.extra_dep('file', 'prospectus_circleci')
 
