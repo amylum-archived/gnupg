@@ -30,7 +30,7 @@ cflags
 libs %w(tasn1 hogweed nettle p11-kit z gmp idn unistring)
 harden
 
-licenses 'COPYING.LIB'
+licenses 'COPYING'
 
 patch 'cflags.patch'
 
@@ -41,7 +41,6 @@ build do
   configure
   make
   install
-  run "ln -s gpg2 #{releasedir}/usr/bin/gpg"
 end
 
 test do
