@@ -74,8 +74,6 @@ harden
 
 licenses 'COPYING'
 
-patch 'cflags.patch'
-
 build do
   run 'sed -i "s/beta=yes/beta=no/" autogen.sh'
   run './autogen.sh'
