@@ -23,16 +23,16 @@ deps(
     checksum: 'e04522fa0df95f7eef09c8e821d844314abf61b2362f48144fc12c4f3c2e4b8c'
   },
   gnutls: {
-    version: '3.5.16-5',
-    checksum: 'a7081b974a6d7d18dae67342ec3b06e91e95bf85072b6ed0934798485565491d'
+    version: '3.5.16-6',
+    checksum: 'f805f375d9c980e9df2bcfa7c75274c7290eb7ab6592b389f2f80afbac6f121f'
   },
   gmp: {
     version: '6.1.2-1',
     checksum: '12515de758fa11b2b3d87b347d0593fc8bde37b32a6c609cbddd09473e180b08'
   },
   nettle: {
-    version: '3.3-6',
-    checksum: 'ec781f78b78f54eeac9abb866a0d1e2cd63dd9abb4a4cc0026f0f10eea0f898b'
+    version: '3.4-1',
+    checksum: 'e960c73d20806156d7dc3fc604af6d031122efe65f9e5155bfafa9280eaf241b'
   },
   libtasn1: {
     version: '4.12-1',
