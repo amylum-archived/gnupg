@@ -11,8 +11,8 @@ deps(
     checksum: '42030909765a93a1da85f30097831b3a13b297c11c2b43d2845511b82c367791'
   },
   libgcrypt: {
-    version: '1.8.1-1',
-    checksum: '04cc1afaddbffb4d0cf00bec0f7415dac6ddbd6e379e451b5ba4a6f843f22ca9'
+    version: '1.8.2-1',
+    checksum: '8b17f57e74b1ab99b94c27f8cd44f02cb8d4a45b640d4c9d17e8a984924bac05'
   },
   libksba: {
     version: '1.3.5-11',
