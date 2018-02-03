@@ -39,8 +39,8 @@ deps(
     checksum: 'fd245952c05c8d3b7fd5b56c920c05c91e9e05a5aec9f83eb109d21d15684345'
   },
   'p11-kit': {
-    version: '0.23.2-8',
-    checksum: '4979f5454dada72364bcec42bb9c1e14f0439d23173c064afb09ac46f7faa31e'
+    version: '0.23.2-9',
+    checksum: '13f3746ef9ede35321b7b1f96726734dd255c65c69dab24b50f90878035ba937'
   },
   zlib: {
     version: '1.2.11-1',
