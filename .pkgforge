@@ -23,8 +23,8 @@ deps(
     checksum: 'e04522fa0df95f7eef09c8e821d844314abf61b2362f48144fc12c4f3c2e4b8c'
   },
   gnutls: {
-    version: '3.5.18-1',
-    checksum: 'c6a58e55ff8836f8abfa9a34d73c232e48addc63045bc090baaebea9831ca8d8'
+    version: '3.5.18-3',
+    checksum: '5e50b35febbbe28976eeda456f859f6ba1018e403fa47c6776d89618d9e54db9'
   },
   gmp: {
     version: '6.1.2-1',
