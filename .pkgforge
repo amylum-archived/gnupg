@@ -51,8 +51,8 @@ deps(
     checksum: '044f426369e3a1e77c41f36f38aed942a68ea5c863e22483e06b228fda7267a2'
   },
   libunistring: {
-    version: '0.9.8-1',
-    checksum: '7e21962ecf63c4f12a227c92a5ae6541078c33732581d68179dc343893bf3d86'
+    version: '0.9.9-1',
+    checksum: 'd31eb1193caf41d9bd9f27e92ef1ecdddcac0fb6de51ae2eb00b0c1c806cb6f1'
   },
   libidn: {
     version: '1.33-2',
