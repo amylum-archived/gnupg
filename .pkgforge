@@ -23,8 +23,8 @@ deps(
     checksum: 'e04522fa0df95f7eef09c8e821d844314abf61b2362f48144fc12c4f3c2e4b8c'
   },
   gnutls: {
-    version: '3.5.18-7',
-    checksum: '4615746e6bd7b7ebe31ad6363c6465ceb52e30cfde0b36fdc807d440b5806816'
+    version: '3.5.18-8',
+    checksum: 'ffa07e545bd5368f96605323640719f980ff3deb04a2a0ab4f321feca3f6584b'
   },
   gmp: {
     version: '6.1.2-1',
@@ -47,8 +47,8 @@ deps(
     checksum: '5596e2d39ef98e2323ac415f50afa71a433ed65c23e8d1f2723f711f5ffb4f32'
   },
   sqlite: {
-    version: '3.22.0-1',
-    checksum: '044f426369e3a1e77c41f36f38aed942a68ea5c863e22483e06b228fda7267a2'
+    version: '3.23.0-1',
+    checksum: 'ad9f8a166f15b4c553df4fe3f2036f4eba06b525156305cd3583769a689a01bd'
   },
   libunistring: {
     version: '0.9.9-1',
