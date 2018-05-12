@@ -23,8 +23,8 @@ deps(
     checksum: 'e04522fa0df95f7eef09c8e821d844314abf61b2362f48144fc12c4f3c2e4b8c'
   },
   gnutls: {
-    version: '3.5.18-10',
-    checksum: 'f5516c58965eba7cd0abb38b363972bee970bc2b3549637181d08a62036dab0f'
+    version: '3.5.18-11',
+    checksum: '9a8ceeae3b137f5310e8dcd93b816d02995e6c697229adb370bde04105b54aeb'
   },
   gmp: {
     version: '6.1.2-1',
@@ -55,8 +55,8 @@ deps(
     checksum: 'd31eb1193caf41d9bd9f27e92ef1ecdddcac0fb6de51ae2eb00b0c1c806cb6f1'
   },
   libidn: {
-    version: '1.34-1',
-    checksum: 'b3695d64e07ae096087b0cfeeac8e509bbd656fd360790006731de22f55770bd'
+    version: '1.35-1',
+    checksum: '5644f6622d77ca173e0f470b941d241ce1fc2e2cdac764e2eb20e6d24d07bfcf'
   }
 )
 
