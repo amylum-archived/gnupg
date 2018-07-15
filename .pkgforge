@@ -3,20 +3,20 @@ org 'amylum'
 
 deps(
   'libgpg-error': {
-    version: '1.30-1',
-    checksum: 'b9c60db131776b8c73df89c165150a567e4e52d617e1659b702acc8417bf52c6'
+    version: '1.31-1',
+    checksum: '8f405a9f6936a5e17e992bd69211a0e22cfa52a18abcc8eb217ea86a1871085a'
   },
   libassuan: {
-    version: '2.5.1-4',
-    checksum: 'd19b9b06a33781b466c46b4e4a63c660cd62f392e7ac64c81879ae3610993280'
+    version: '2.5.1-5',
+    checksum: '644c7fc29d2b92e0226a156ab37561b50f0cae23675ba0b64728c23daf8c528e'
   },
   libgcrypt: {
-    version: '1.8.3-1',
-    checksum: '1b92c16e0c7ad57ed129c54e1715d0ee4b56751c3a8fa73b127ee93d9d83c606'
+    version: '1.8.3-2',
+    checksum: 'afca8e84fb3e02bc3c658b01789aec261eeef0ed8925d6bebc01a107d23658d5'
   },
   libksba: {
-    version: '1.3.5-14',
-    checksum: 'aad2a292b60b68c546e598c880cc52585ebf7cdbc185591b50c0ec32584b91e3'
+    version: '1.3.5-15',
+    checksum: '1605bd0bb4f5b525cec7b8547db34e1107514848d74191e58e8196b998ecba79'
   },
   npth: {
     version: '1.5-1',
