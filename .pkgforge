@@ -19,12 +19,12 @@ deps(
     checksum: '1605bd0bb4f5b525cec7b8547db34e1107514848d74191e58e8196b998ecba79'
   },
   npth: {
-    version: '1.5-1',
-    checksum: 'e04522fa0df95f7eef09c8e821d844314abf61b2362f48144fc12c4f3c2e4b8c'
+    version: '1.6-1',
+    checksum: 'fb3e154ac5ed95bd894a73f5c0f61887ecb1ea33ab61a8bf627a345cde7b0b70'
   },
   gnutls: {
-    version: '3.5.18-16',
-    checksum: 'c7e120fb221f71902004d726e3340b5b29d81ddaef52f969b94b54ec67addfdf'
+    version: '3.5.19-1',
+    checksum: 'ab66de965d865140ca1c154f26668c9dc0db2e7b0db62dc335a0b74266504839'
   },
   gmp: {
     version: '6.1.2-1',
