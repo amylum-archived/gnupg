@@ -5,6 +5,7 @@ services:
 env:
   global:
   - PKGFORGE_STATEFILE=/tmp/pkgforge
+  - secure: Pv8wctXGM1FkmPqy4x8VkcWvgvPMs79/ODF7AS0/NeT3pSBEhHc3oH2jEX0giErKM+w66AMasm6thEa//uJ7ag5APB6DO0x4BawdbWqkaxlYULjGmj3oEnqJDfJq0zvLaodTy+cgp+Xe8cdSi5106cPmmsen5gQHA6qxFNzij1wFp79TmAdXpvi/CljneRrkFU4OnSx6/I+GPq0pguZ/McZpps+UV1ABxN9xCmnS/eThzQ/taF1bDYzrFNNIGCF8+j5DdYib8x05EdXl7llorS5X3rDSB20fPiCvRDd0vmju4f40a/CuKRMXdOuUZdlI7PWlv/aDlZs/pK0Iiwb/RRIehnUF+A/jEPs5RmCm0jUkHXpOBzy6/+Wl5tyhwg4REOSZ+r1IuWDkz3IBbU3ymHMDh+KJKckK4e1fYYxbl+bSd/1ZqT5rbJg2XOBCrB8plYLlepxThJ3msT49qV1UgAfD9nZQoDp/xO03Ztr5TLcHvGFgPiMJQpHKwBwxtu+ljThZ+lsJyyjZqs6qHINfPIKcXetYxaSBpqIIA8pvTi7QwVBatTySh0AgP363+rSWoOdcyZWns6TFszpRlS+tK2H24Yr4CmQYSIJhdp2fFyXDSFvHZEydS+4GDxTgR8/CJ1RUQsgsju9l+vuoFdQwOZXA2Wp0e3qdZeE0ATbnB0c=
 script: make
 deploy:
   provider: script
