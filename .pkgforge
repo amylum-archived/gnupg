@@ -11,8 +11,8 @@ deps(
     checksum: '644c7fc29d2b92e0226a156ab37561b50f0cae23675ba0b64728c23daf8c528e'
   },
   libgcrypt: {
-    version: '1.8.3-2',
-    checksum: 'afca8e84fb3e02bc3c658b01789aec261eeef0ed8925d6bebc01a107d23658d5'
+    version: '1.8.4-1',
+    checksum: '77d6c555e1b88e84ac57899257b91e658f06e06eee90d112964cd1eae797517a'
   },
   libksba: {
     version: '1.3.5-15',
@@ -23,8 +23,8 @@ deps(
     checksum: 'fb3e154ac5ed95bd894a73f5c0f61887ecb1ea33ab61a8bf627a345cde7b0b70'
   },
   gnutls: {
-    version: '3.5.19-5',
-    checksum: '3f976809936c7eb77072988537a51236c524928164d3f6f6180e6cd38325c6ec'
+    version: '3.5.19-6',
+    checksum: '27331b139ea74d662ecca8995e66d3b7e1d4a3380b680ba1db2f8e769c05a85d'
   },
   gmp: {
     version: '6.1.2-1',
