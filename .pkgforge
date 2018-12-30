@@ -79,6 +79,7 @@ build do
   run './autogen.sh'
   run 'autoconf'
   configure
+  FileUtils.touch(['doc/gnupg-module-overview.pdf', 'doc/gnupg-module-overview.png'])
   make
   install
 end
