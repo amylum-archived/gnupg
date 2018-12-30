@@ -79,7 +79,7 @@ build do
   run './autogen.sh'
   run 'autoconf'
   configure
-  FileUtils.touch(['doc/gnupg-module-overview.pdf', 'doc/gnupg-module-overview.png'])
+  FileUtils.touch(['doc/gnupg-module-overview.pdf', 'doc/gnupg-module-overview.png', 'doc/gnupg-card-architecture.png'])
   make
   install
 end
