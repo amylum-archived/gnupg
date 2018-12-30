@@ -31,8 +31,8 @@ deps(
     checksum: '12515de758fa11b2b3d87b347d0593fc8bde37b32a6c609cbddd09473e180b08'
   },
   nettle: {
-    version: '3.4-1',
-    checksum: 'e960c73d20806156d7dc3fc604af6d031122efe65f9e5155bfafa9280eaf241b'
+    version: '3.4.1-1',
+    checksum: 'bde793b4551aa928a8fee81e598a18376a7ab157e59e1c17e232d876f1aac4e8'
   },
   libtasn1: {
     version: '4.13-1',
@@ -47,8 +47,8 @@ deps(
     checksum: '7da7212123edac6d5d5dc2db8fb10a6af06472578840c51e489e1f391b66c208'
   },
   sqlite: {
-    version: '3.25.2-1',
-    checksum: '1e3fbb955b0d307cb698326df6fc529c95d0fe80c5162665a8596547473b13cf'
+    version: '3.26.0-1',
+    checksum: '26c48b630c923d72e76bc6e3790d8d30778f010578686ce23ba4bbfad55e8948'
   },
   libunistring: {
     version: '0.9.10-1',
