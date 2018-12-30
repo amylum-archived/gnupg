@@ -79,7 +79,12 @@ build do
   run './autogen.sh'
   run 'autoconf'
   configure
-  FileUtils.touch(['doc/gnupg-module-overview.pdf', 'doc/gnupg-module-overview.png', 'doc/gnupg-card-architecture.png'])
+  [
+    'gnupg-module-overview.pdf',
+    'gnupg-module-overview.png',
+    'gnupg-card-architecture.png',
+    'gnupg-card-architecture.pdf'
+  ].each { |x| FileUtils.touch('doc/' + x ) }
   make
   install
 end
