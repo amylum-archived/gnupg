@@ -7,8 +7,8 @@ deps(
     checksum: '1930a9879a364751e2486ee796d8c081b3a5307aa1e70f5b84e15b612b9d120b'
   },
   libassuan: {
-    version: '2.5.2-3',
-    checksum: '2e824c49d94941fe4dd45da18482e46e6fc47ea9db52ce098a023d5fa7dec600'
+    version: '2.5.3-1',
+    checksum: '01e48328f1d2442d8a06ed1890b3a642f73f6f56345ec59be9a989adea801cd8'
   },
   libgcrypt: {
     version: '1.8.4-3',
@@ -47,8 +47,8 @@ deps(
     checksum: '7da7212123edac6d5d5dc2db8fb10a6af06472578840c51e489e1f391b66c208'
   },
   sqlite: {
-    version: '3.26.0-1',
-    checksum: '26c48b630c923d72e76bc6e3790d8d30778f010578686ce23ba4bbfad55e8948'
+    version: '3.27.2-1',
+    checksum: '5a86342304279998bdc0fd05d204cbcf936d99af0656d5d6c68d30422ca3d63c'
   },
   libunistring: {
     version: '0.9.10-1',
