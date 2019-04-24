@@ -47,8 +47,8 @@ deps(
     checksum: '7da7212123edac6d5d5dc2db8fb10a6af06472578840c51e489e1f391b66c208'
   },
   sqlite: {
-    version: '3.27.2-1',
-    checksum: '5a86342304279998bdc0fd05d204cbcf936d99af0656d5d6c68d30422ca3d63c'
+    version: '3.28.0-1',
+    checksum: '4028676c38c84d61bb8fe9f6946429f630f9e24882ed6b975693f55871414386'
   },
   libunistring: {
     version: '0.9.10-1',
